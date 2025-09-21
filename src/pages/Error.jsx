@@ -1,9 +1,9 @@
 {
-  /* src/pages/Error.jsx */
+    /* src/pages/Error.jsx */
 }
 
 function Error() {
-  return <h1>ErrorPage</h1>;
+    return <h1>Error</h1>;
 }
 
 export default Error;
