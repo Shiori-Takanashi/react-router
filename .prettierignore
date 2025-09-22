@@ -1,0 +1,26 @@
+# 依存関係
+node_modules/
+dist/
+build/
+
+# ログファイル
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# キャッシュディレクトリ
+.cache/
+.parcel-cache/
+.vscode/
+.DS_Store
+
+# 自動生成ファイル
+coverage/
+*.min.js
+*.min.css
+
+# 設定ファイル（必要に応じて）
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
