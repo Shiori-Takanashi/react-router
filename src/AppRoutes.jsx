@@ -7,9 +7,9 @@ import DashboardReports from './components/DashboardReports';
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path='/dashboard' element={<DashboardLayout />}>
+      <Route path='/' element={<DashboardLayout />}>
         <Route index element={<DashboardHome />} />
-        <Route path='reports' element={<DashboardReports />} />{' '}
+        <Route path='reports' element={<DashboardReports />} />
       </Route>
     </Routes>
   );
