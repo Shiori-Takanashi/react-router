@@ -1,0 +1,25 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@apply",
+      "description": "@applyを使用して既存のユーティリティクラスを独自のCSSに直接適用できます。"
+    },
+    {
+      "name": "@layer",
+      "description": "@layerを使用してTailwindにカスタムスタイルがどの「レイヤー」に属するかを指定します。"
+    },
+    {
+      "name": "@responsive",
+      "description": "@responsiveディレクティブで独自のクラスをラップすることで、レスポンシブバリアントを生成できます。"
+    },
+    {
+      "name": "@screen",
+      "description": "@screenディレクティブを使用してブレークポイント名を参照するメディアクエリを作成できます。"
+    },
+    {
+      "name": "@variants",
+      "description": "@variantsディレクティブで独自のユーティリティをラップすることで、バリアントを生成できます。"
+    }
+  ]
+}
