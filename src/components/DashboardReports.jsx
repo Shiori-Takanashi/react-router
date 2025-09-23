@@ -62,17 +62,16 @@ export default function DashboardReports() {
         <DashboardHero
           title='Reports Dashboard'
           subtitle='レポートの検索・フィルタリング・ステータス更新を効率的に行えます。'
-          gradient='from-green-600 to-blue-600'
+          gradient='from-blue-600 to-purple-600'
         >
           {/* Search Filter */}
           <div className='relative'>
-            <FaSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' />
+            <FaSearch className='absolute left-75 top-1/2 transform -translate-y-1/2 text-gray-400' />
             <input
               type='text'
-              placeholder='Search reports by title or status...'
               value={filter}
               onChange={e => setFilter(e.target.value)}
-              className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-gray-900'
+              className='pl-20 pr-20 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-gray-900'
             />
           </div>
         </DashboardHero>
