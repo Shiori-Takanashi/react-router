@@ -3,7 +3,11 @@
 }
 
 function Home() {
-  return <h1>HomePage</h1>;
+  return (
+    <div>
+      <h1>HomePage</h1>
+    </div>
+  );
 }
 
 export default Home;

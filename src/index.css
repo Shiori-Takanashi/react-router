@@ -1,39 +1,32 @@
 /* src/index.css */
+@import 'tailwindcss';
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
+/* ページ全体を上下左右中央寄せ */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  @apply flex items-center justify-center min-h-screen text-center;
 }
 
+/* 見出しスタイル（階層に応じてサイズを調整） */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  @apply text-4xl font-bold;
+}
+
+h2 {
+  @apply text-3xl font-semibold;
+}
+
+h3 {
+  @apply text-2xl font-medium;
+}
+
+h4 {
+  @apply text-xl font-medium;
 }
