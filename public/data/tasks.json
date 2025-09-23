@@ -1,0 +1,26 @@
+[
+  {
+    "taskId": "T-001",
+    "title": "月次レポート作成",
+    "assignee": "山田 太郎",
+    "deadline": "2025-09-15",
+    "priority": "高",
+    "status": "完了"
+  },
+  {
+    "taskId": "T-002",
+    "title": "新規顧客データ入力",
+    "assignee": "佐藤 花子",
+    "deadline": "2025-09-20",
+    "priority": "中",
+    "status": "進行中"
+  },
+  {
+    "taskId": "T-003",
+    "title": "システムバックアップ確認",
+    "assignee": "鈴木 一郎",
+    "deadline": "2025-09-25",
+    "priority": "低",
+    "status": "未着手"
+  }
+]

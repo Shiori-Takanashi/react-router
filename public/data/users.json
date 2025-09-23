@@ -1,0 +1,23 @@
+[
+  {
+    "id": 101,
+    "name": "山田 太郎",
+    "role": "管理者",
+    "email": "taro.yamada@example.com",
+    "status": "Active"
+  },
+  {
+    "id": 102,
+    "name": "佐藤 花子",
+    "role": "一般ユーザー",
+    "email": "hanako.sato@example.com",
+    "status": "Inactive"
+  },
+  {
+    "id": 103,
+    "name": "鈴木 一郎",
+    "role": "一般ユーザー",
+    "email": "ichiro.suzuki@example.com",
+    "status": "Active"
+  }
+]

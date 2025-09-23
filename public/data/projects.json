@@ -1,0 +1,29 @@
+[
+  {
+    "projectId": "P-001",
+    "name": "新製品開発プロジェクト",
+    "manager": "山田 太郎",
+    "startDate": "2025-08-01",
+    "endDate": "2026-01-31",
+    "status": "進行中",
+    "description": "新しいIoT製品の企画から量産までを担当。"
+  },
+  {
+    "projectId": "P-002",
+    "name": "マーケティングキャンペーン",
+    "manager": "佐藤 花子",
+    "startDate": "2025-09-10",
+    "endDate": "2025-12-31",
+    "status": "未着手",
+    "description": "年末に向けた広告キャンペーンの準備。"
+  },
+  {
+    "projectId": "P-003",
+    "name": "社内システム刷新",
+    "manager": "鈴木 一郎",
+    "startDate": "2025-07-15",
+    "endDate": "2026-03-30",
+    "status": "完了",
+    "description": "基幹システムの入れ替えを実施。"
+  }
+]
