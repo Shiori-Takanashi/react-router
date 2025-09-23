@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 export default function DashboardHero({ title, subtitle, gradient, children }) {
   return (
     <div
-      className={`bg-gradient-to-r ${gradient} text-white p-8 rounded-lg shadow-lg mb-6`}
+      className={`w-[960px] mx-auto bg-gradient-to-r ${gradient} text-white p-8 rounded-lg shadow-lg mb-6`}
     >
       {/* タイトル */}
       <h2 className='text-3xl font-bold mb-4'>{title}</h2>
