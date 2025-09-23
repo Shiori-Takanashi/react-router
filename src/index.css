@@ -13,20 +13,3 @@
 body {
   @apply flex items-center justify-center min-h-screen text-center;
 }
-
-/* 見出しスタイル（階層に応じてサイズを調整） */
-h1 {
-  @apply text-4xl font-bold;
-}
-
-h2 {
-  @apply text-3xl font-semibold;
-}
-
-h3 {
-  @apply text-2xl font-medium;
-}
-
-h4 {
-  @apply text-xl font-medium;
-}
