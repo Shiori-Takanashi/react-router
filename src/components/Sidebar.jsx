@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FaHome, FaChartBar } from 'react-icons/fa';
 
 export default function Sidebar() {
-  const [activeLink, setActiveLink] = useState('/dashboard');
+  const [activeLink, setActiveLink] = useState('/');
 
   const handleClick = path => {
     setActiveLink(path);
@@ -18,13 +18,13 @@ export default function Sidebar() {
           <ul className='space-y-2'>
             <li>
               <Link
-                to='/dashboard'
+                to='/'
                 className={`flex items-center p-3 rounded-lg transition-colors duration-200 hover:bg-gray-700 ${
-                  activeLink === '/dashboard'
+                  activeLink === '/'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-300'
                 }`}
-                onClick={() => handleClick('/dashboard')}
+                onClick={() => handleClick('/')}
               >
                 <FaHome className='mr-3 text-lg' />
                 <span className='font-medium'>Home</span>
@@ -32,13 +32,13 @@ export default function Sidebar() {
             </li>
             <li>
               <Link
-                to='/dashboard/reports'
+                to='/reports'
                 className={`flex items-center p-3 rounded-lg transition-colors duration-200 hover:bg-gray-700 ${
-                  activeLink === '/dashboard/reports'
+                  activeLink === '/reports'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-300'
                 }`}
-                onClick={() => handleClick('/dashboard/reports')}
+                onClick={() => handleClick('/reports')}
               >
                 <FaChartBar className='mr-3 text-lg' />
                 <span className='font-medium'>Reports</span>
