@@ -1,5 +1,6 @@
 // src/components/DashboardHome.jsx
 import { FaRocket, FaUsers, FaChartLine, FaCog } from 'react-icons/fa';
+import DashboardHero from './common/DashboardHero';
 
 export default function DashboardHome() {
   const stats = [
@@ -22,20 +23,19 @@ export default function DashboardHome() {
   return (
     <div className='w-full min-h-full'>
       <div className='space-y-6'>
-        {/* Home Section */}
-        <div className='bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-bold mb-4'>Welcome to Your Dashboard</h2>
-          <p className='text-blue-100 text-lg mb-6'>
-            This is the default view when you access localhost. Here you can
-            manage all your data and analytics.
-          </p>
+        {/* 共通 Hero Section */}
+        <DashboardHero
+          title='Welcome to Your Dashboard'
+          subtitle='ここでは主要な統計データやクイックアクションにアクセスできます。'
+          gradient='from-blue-600 to-purple-600'
+        >
           <button
             onClick={() => alert('Button clicked!')}
             className='bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 shadow-md'
           >
             Get Started
           </button>
-        </div>
+        </DashboardHero>
 
         {/* Stats Grid */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>

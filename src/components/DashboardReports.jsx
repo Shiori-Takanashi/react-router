@@ -8,34 +8,32 @@ import {
   FaSpinner,
   FaTimes,
 } from 'react-icons/fa';
+import DashboardHero from './common/DashboardHero';
 
-// JSONファイルからデータを読み込む
 export default function DashboardReports() {
   const [reports, setReports] = useState([]);
   const [filter, setFilter] = useState('');
   const [selectedReport, setSelectedReport] = useState(null);
 
-  // JSONファイルのデータを非同期に読み込む
+  // JSON データ読み込み
   useEffect(() => {
-    fetch('/data/reports.json') // Reactのpublicフォルダ内に配置したJSONファイルを取得
+    fetch('/data/reports.json')
       .then(response => response.json())
       .then(data => setReports(data))
       .catch(error => console.error('Error fetching data:', error));
-  }, []); // 初回レンダリング時のみ実行
+  }, []);
 
-  // フィルタリング処理
+  // 検索フィルタ
   const filteredReports = reports.filter(
     report =>
       report.status.toLowerCase().includes(filter.toLowerCase()) ||
       report.title.toLowerCase().includes(filter.toLowerCase())
   );
 
-  // 詳細情報の表示
-  const handleViewDetails = report => {
-    setSelectedReport(report);
-  };
+  // 詳細表示
+  const handleViewDetails = report => setSelectedReport(report);
 
-  // ステータスを更新
+  // ステータス変更
   const handleStatusChange = (reportId, newStatus) => {
     const updatedReports = reports.map(report =>
       report.id === reportId ? { ...report, status: newStatus } : report
@@ -43,7 +41,7 @@ export default function DashboardReports() {
     setReports(updatedReports);
   };
 
-  // ステータスに応じたアイコンと色を取得
+  // ステータスごとのアイコンと色
   const getStatusIcon = status => {
     switch (status) {
       case 'Completed':
@@ -60,14 +58,12 @@ export default function DashboardReports() {
   return (
     <div className='w-full min-h-full'>
       <div className='space-y-6'>
-        {/* Reports Section */}
-        <div className='bg-gradient-to-r from-green-600 to-blue-600 text-white p-8 rounded-lg shadow-lg'>
-          <h2 className='text-3xl font-bold mb-4'>Reports Dashboard</h2>
-          <p className='text-green-100 text-lg mb-6'>
-            Monitor and manage all your reports from this centralized dashboard.
-            Search, filter, and update report statuses efficiently.
-          </p>
-
+        {/* Hero Section */}
+        <DashboardHero
+          title='Reports Dashboard'
+          subtitle='レポートの検索・フィルタリング・ステータス更新を効率的に行えます。'
+          gradient='from-green-600 to-blue-600'
+        >
           {/* Search Filter */}
           <div className='relative'>
             <FaSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' />
@@ -79,11 +75,10 @@ export default function DashboardReports() {
               className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-gray-900'
             />
           </div>
-        </div>
+        </DashboardHero>
 
         {/* Stats Overview */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-          {/* Total Reports */}
           <div className='bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-200'>
             <div className='flex items-center justify-between'>
               <div>
@@ -100,7 +95,6 @@ export default function DashboardReports() {
             </div>
           </div>
 
-          {/* Completed Reports */}
           <div className='bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-200'>
             <div className='flex items-center justify-between'>
               <div>
@@ -115,7 +109,6 @@ export default function DashboardReports() {
             </div>
           </div>
 
-          {/* In Progress Reports */}
           <div className='bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-200'>
             <div className='flex items-center justify-between'>
               <div>
@@ -130,7 +123,6 @@ export default function DashboardReports() {
             </div>
           </div>
 
-          {/* Pending Reports */}
           <div className='bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-200'>
             <div className='flex items-center justify-between'>
               <div>
@@ -195,6 +187,7 @@ export default function DashboardReports() {
                     </div>
 
                     <div className='flex items-center gap-2'>
+                      {/* 詳細表示 */}
                       <button
                         onClick={() => handleViewDetails(report)}
                         className='flex items-center px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors duration-200'
@@ -202,6 +195,7 @@ export default function DashboardReports() {
                         <FaEye className='mr-1' /> View
                       </button>
 
+                      {/* ステータス更新 */}
                       {report.status === 'Pending' && (
                         <button
                           onClick={() =>
@@ -254,36 +248,18 @@ export default function DashboardReports() {
                     </label>
                     <p className='text-gray-900'>{selectedReport.title}</p>
                   </div>
-
                   <div>
                     <label className='block text-sm font-medium text-gray-700 mb-1'>
                       Status
                     </label>
-                    <div className='flex items-center'>
-                      {(() => {
-                        const statusInfo = getStatusIcon(selectedReport.status);
-                        const StatusIcon = statusInfo.icon;
-                        return (
-                          <div
-                            className={`flex items-center px-3 py-1 rounded-full ${statusInfo.color}`}
-                          >
-                            <StatusIcon className='mr-2 text-sm' />
-                            <span className='text-sm font-medium'>
-                              {selectedReport.status}
-                            </span>
-                          </div>
-                        );
-                      })()}
-                    </div>
+                    <p className='text-gray-900'>{selectedReport.status}</p>
                   </div>
-
                   <div>
                     <label className='block text-sm font-medium text-gray-700 mb-1'>
                       Date
                     </label>
                     <p className='text-gray-900'>{selectedReport.date}</p>
                   </div>
-
                   <div>
                     <label className='block text-sm font-medium text-gray-700 mb-1'>
                       Details
